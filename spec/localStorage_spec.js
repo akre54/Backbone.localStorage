@@ -1,8 +1,9 @@
-
-
 describe("Backbone.localStorage", function(){
 
-  var _ = Backbone._;
+  var _ = Backbone.utils;
+  Backbone.Collection.prototype.first = function() {
+    return this.models[0];
+  }
 
   var attributes = {
     string: "String",
@@ -55,7 +56,7 @@ describe("Backbone.localStorage", function(){
       });
 
       it("should have a populated model", function(){
-        var withId = _.clone(attributes);
+        var withId = _.extend({}, attributes);
         withId.id = model.id;
         assert.deepEqual(model.toJSON(), withId);
       });
@@ -110,7 +111,7 @@ describe("Backbone.localStorage", function(){
           });
 
           it("should have kept its old properties", function(){
-            var withId = _.clone(attributes);
+            var withId = _.extend({}, attributes);
             withId.id = 1;
             assert.deepEqual(model2.toJSON(), withId);
           });
@@ -127,13 +128,13 @@ describe("Backbone.localStorage", function(){
         before(function(){
           // Make sure there's at least items in there
           // ... can't rely on previous tests
-          _(5).times(function(){
+          for (var i=0; i < 5; i++) {
             collection.create()
-          });
+          };
         });
 
         before(function(){
-          _.each(collection.toArray(), function(model){
+          collection.slice().forEach(function(model){
             model.destroy();
           });
           beforeFetchLength = collection.length;
@@ -228,7 +229,7 @@ describe("Backbone.localStorage", function(){
         });
 
         it("should persist the changes", function(){
-          assert.deepEqual(model.toJSON(), _.extend(_.clone(attributes), {id: model.id, number: 42}));
+          assert.deepEqual(model.toJSON(), _.extend({}, attributes, {id: model.id, number: 42}));
         });
 
       });
@@ -351,10 +352,14 @@ describe("AMD", function(){
 
   require.config({
     paths: {
-      jquery: "support/jquery",
-      underscore: "support/underscore",
-      backbone: "support/backbone",
+      backbone: "support/exoskeleton",
+      davy: 'support/davy',
+      subsequent: 'support/subsequent',
+      empty: 'support/empty',
       localstorage: "../backbone.localStorage"
+    },
+    map: {
+      '*': {'jquery': 'empty', 'underscore': 'empty'}
     }
   });
 
