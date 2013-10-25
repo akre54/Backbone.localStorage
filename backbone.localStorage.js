@@ -26,10 +26,8 @@
 // persistence. Models are given GUIDS, and saved into a JSON object. Simple
 // as that.
 
-// Hold reference to Underscore.js and Backbone.js in the closure in order
-// to make things work even if they are removed from the global namespace
-
-var _ = Backbone.utils;
+// Hold reference to Backbone object in the closure in order to make things
+// work even if it's removed from the global namespace.
 
 // Generate four random hex digits.
 function S4() {
@@ -50,7 +48,7 @@ Backbone.LocalStorage = window.Store = function(name) {
   this.records = (store && store.split(",")) || [];
 };
 
-_.extend(Backbone.LocalStorage.prototype, {
+Backbone.LocalStorage.prototype = {
 
   // Save the current state of the **Store** to *localStorage*.
   save: function() {
@@ -115,7 +113,7 @@ _.extend(Backbone.LocalStorage.prototype, {
     return data && JSON.parse(data);
   }
 
-});
+};
 
 // localSync delegate to the model or collection's
 // *localStorage* property, which should be an instance of `Store`.
