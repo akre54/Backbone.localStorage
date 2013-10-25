@@ -2,6 +2,8 @@
 
 describe("Backbone.localStorage", function(){
 
+  var _ = Backbone._;
+
   var attributes = {
     string: "String",
     string2: "String 2",
