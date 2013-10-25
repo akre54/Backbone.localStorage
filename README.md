@@ -1,6 +1,6 @@
 # Exoskeleton localStorage Adapter v1.0.0
 
-[![Build Status](https://secure.travis-ci.org/akre54/Exoskeleton.localStorage.png?branch=master)](http://travis-ci.org/jeromegn/Backbone.localStorage)
+[![Build Status](https://secure.travis-ci.org/akre54/Exoskeleton.localStorage.png?branch=master)](http://travis-ci.org/akre54/Exoskeleton.localStorage)
 
 Quite simply a localStorage adapter for Backbone. It's a drop-in replacement for Backbone.Sync() to handle saving to a localStorage database.
 
