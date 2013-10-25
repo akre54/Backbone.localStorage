@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.0 - October 24, 2013
+
+- Initial fork from @jeromegn/backbone.localStorage
+
+
 ## 1.1.7 - October 4, 2013
 
 - Fix CommonJS requiring (Brandon Dimcheff)

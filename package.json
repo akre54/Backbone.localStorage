@@ -1,14 +1,16 @@
 {
-  "author": "Jerome Gravel-Niquet <jeromegn@gmail.com> (http://jgn.me)",
-  "name": "backbone.localstorage",
-  "version": "1.1.7",
+  "authors": [
+    "Jerome Gravel-Niquet <jeromegn@gmail.com> (http://jgn.me)",
+    "Adam Krebs <amk528@cs.nyu.edu> (http://sberkmada.com)"
+  ],
+  "name": "exoskeleton.localstorage",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jeromegn/Backbone.localStorage.git"
+    "url": "git://github.com/akre54/Backbone.localStorage.git"
   },
   "dependencies": {
-    "backbone": "~1.x.x",
-    "underscore": "~1.4.x"
+    "davy": "*"
   },
   "devDependencies": {
     "uglify-js": "~1.2.6",

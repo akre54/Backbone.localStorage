@@ -1,9 +1,13 @@
-# Backbone localStorage Adapter v1.1.7
+# Exoskeleton localStorage Adapter v1.0.0
 
-[![Build Status](https://secure.travis-ci.org/jeromegn/Backbone.localStorage.png?branch=master)](http://travis-ci.org/jeromegn/Backbone.localStorage)
+[![Build Status](https://secure.travis-ci.org/akre54/Exoskeleton.localStorage.png?branch=master)](http://travis-ci.org/jeromegn/Backbone.localStorage)
 
 Quite simply a localStorage adapter for Backbone. It's a drop-in replacement for Backbone.Sync() to handle saving to a localStorage database.
 
+Exoskeleton aims to remove all dependencies on jQuery and underscore from Backbone in favor of native and HTML5/EC5 methods. This adapter should be compatible with Backbone as well as Exoskeleton if you desire not to use jQuery or underscore.
+
+
+If you like this software, please give a gittip to the original coder, [@jeromegn](https://github.com/jeromegn).
 [![Gittip](http://badgr.co/gittip/jeromegn.png)](https://www.gittip.com/jeromegn/)
 
 ## Usage
@@ -19,11 +23,11 @@ Create your collections like so:
 
 ```javascript
 window.SomeCollection = Backbone.Collection.extend({
-  
+
   localStorage: new Backbone.LocalStorage("SomeCollection"), // Unique name within your app.
-  
+
   // ... everything else is normal.
-  
+
 });
 ```
 ### RequireJS
@@ -34,7 +38,7 @@ Include [RequireJS](http://requirejs.org):
 <script type="text/javascript" src="lib/require.js"></script>
 ```
 
-RequireJS config: 
+RequireJS config:
 ```javascript
 require.config({
     paths: {
@@ -52,7 +56,7 @@ define("someCollection", ["localstorage"], function() {
     var SomeCollection = Backbone.Collection.extend({
         localStorage: new Backbone.LocalStorage("SomeCollection") // Unique name within your app.
     });
-  
+
     return new SomeCollection();
 });
 ```
@@ -99,6 +103,7 @@ Have fun!
 Licensed under MIT license
 
 Copyright (c) 2010 Jerome Gravel-Niquet
+Copyright (c) 2013 Adam Krebs
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
